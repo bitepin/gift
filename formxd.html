@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Una carta mas para mi amado...</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f5e1e6, #e6d5f7);
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            overflow: auto;
+            padding: 20px;
+        }
+
+        .carta {
+            background: #fff;
+            width: 400px;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            position: relative;
+            text-align: center;
+            border: 3px solid #ffccd5;
+            border-image: linear-gradient(45deg, #ff6f91, #ffccd5) 1;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .carta::before, .carta::after,
+        .carta .decor1, .carta .decor2 {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="pink" stroke-width="2"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>') no-repeat center;
+            background-size: contain;
+        }
+
+        .carta::before {
+            top: 10px;
+            left: 10px;
+            transform: rotate(-25deg);
+        }
+
+        .carta::after {
+            bottom: 10px;
+            right: 10px;
+            transform: rotate(25deg);
+        }
+
+        .carta .decor1 {
+            top: 15px;
+            right: 15px;
+            transform: rotate(15deg);
+            opacity: 0.7;
+        }
+
+        .carta .decor2 {
+            bottom: 15px;
+            left: 15px;
+            transform: rotate(-15deg);
+            opacity: 0.7;
+        }
+
+        h1 {
+            color: #ff6f91;
+            font-size: 32px;
+            font-family: 'Georgia', serif;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        p {
+            color: #333;
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 0 0 20px;
+        }
+
+        .firma {
+            font-style: italic;
+            color: #ff6f91;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        .adorno {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .adorno span {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: #ffccd5;
+            border-radius: 50%;
+            animation: float 4s infinite ease-in-out;
+        }
+
+        .adorno span:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; }
+        .adorno span:nth-child(2) { top: 20%; right: 10%; animation-delay: 0.5s; }
+        .adorno span:nth-child(3) { bottom: 15%; left: 15%; animation-delay: 1s; }
+        .adorno span:nth-child(4) { top: 30%; left: 25%; animation-delay: 1.5s; }
+        .adorno span:nth-child(5) { bottom: 25%; right: 20%; animation-delay: 2s; }
+        .adorno span:nth-child(6) { top: 50%; left: 10%; animation-delay: 2.5s; }
+        .adorno span:nth-child(7) { bottom: 10%; right: 5%; animation-delay: 3s; }
+        .adorno span:nth-child(8) { top: 40%; right: 15%; animation-delay: 3.5s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-25px) scale(1.2); }
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        .boton {
+            background: #ff6f91;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px;
+            transition: background 0.3s;
+        }
+
+        .boton:hover {
+            background: #ff4d73;
+        }
+    </style>
+</head>
+<body>
+    <div class="carta">
+        <div class="adorno">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="decor1"></div>
+        <div class="decor2"></div>
+        <h1>Mi Amor Eterno</h1>
+        <p>Mi querido yandy ,</p>
+        <p>hola hola mi vida...bueno espero estes bien, me avente y hice esta cartita mas para ti, se que no hay nada en especial pero te hice esta carta por el 21 de septiembre, quizas alla no se celebre eso pero aqui se recuerda como el dia del amor y amistad y sabes, quize hacer esto para decirte "Feliz dia del amor mi niño", sabes he estado pensando siempre en ti, siempre me he preguntado en si estaras bien y espero estes bien, espero te me hayas cuidado, nose si aun piensas en mi pero dejame decirte que yo siempre he pensado en ti, cada segundo y cada instante, hasta cuando voy a dormir, voy a mi cole pensando en ti, y sabes...sigues presente en mi corazon, siempre lo haz estado, cada que pasa mas tiempo...la nostalgia me mata, el no poder hablar y saber de ti me desespera un poco, creo que ya se me han bajado mis ataques de ansiedad pero siguen alli...recordandome que es mi culpa, pero ese no es el punto, tampoco se si ya te conseguiste a alguien mas...yo en cambio ahora lo unico que hago es pensar en ti, aunque no estes a mi lado siempre me imagino como seria caminar y pasear, pues para mi siempre vas a ser mi niño hermoso, para mi...siempre vas a ser el amor de mi vida y como me prometi a mi misma, te amo y te amare hasta mi ultimo suspiro, te amare hasta mi ultimo latido, tampoco se si ya me olvidaste, pero yo te tengo en mi mente y alma siempre, siempre te tengo presente en cada segundo que paso, todos los dias hasta en mis sueños, porque sabes, yo nunca te olvidaria, nunca olvidaria a el niño que me hico reir, suspirar o llorar de sentir tanto amor, nunca olvidaria a mi niño que me hace sentir amada y comprendida, para mi...TU, mi querido yandel eres todo lo que siempre habia esperado a que aparezca pero no pense que llegaria, te ganaste todo mi corazon y alma, te quedaste atrapado en cada recuerdo que conservo, te amo tanto que lloro, lloro porque estoy agradecida, muy agradecida de que hayas aparecido en mi vida, muy agradecida de que la vida me haya echo conocer al niño mas lindo, de buen corazon, cariñoso y amable, en este basto mundo me toco conocerte y no me arrepiento de nada, porque gracias a ti es que ya se como se siente sentirse amada, y sabes...casi siempre leo las cartitas que me dejaste y la mayoria de las veces lloro porque te extraño demasiado, porque de verdad te echo de menos, de verdad...me haces falta,tambien te queria decir que ¿sabes que dia es el jueves?...es ya el dia que cumplimos medio año, zi, bueno segunio xd, espero que estes feliz, espero que hayas dormido bien, espero que siempre seas ese hermoso niño al que conoci, si estubieras a mi lado te diria: porfavor sonrie, que esa sonriza me da vida todos los dias, cuidate, que sino con quien me voy a casar mi niño, y porfavor...no me olvidez, se que sueña raro, almenos, bueno ese ha sido mi mayor miedo siempre, Ser olvidada...pero sabes, quiero que siempre estes feliz, y tambien, que me importas mucho, me importas tanto que cada que sueño contigo pues me gana la trizteza por no saber como estas y me deprimo, y sabes siempre sueño contigo, se que puede sonar algo raro pero sueño y tengo la fe de que esos sueños que compartiamos se cumplan porque no me imagino mi vida si no estas alli, por eso quiero que te me cuides, que no te me deprimas porque aunque no este alli, me encantaria abrazarte y amarte con todo mi ser, aunque no pueda hacer mas que recordar y extrañarte, quiero desafiar al destino y estar contigo, no importa que se nos atraviese, quiero amarte por siempre, aunque no este alli, quiero que sepas que te amo infinitamente, que te apoyo en todo aunque en silencio, que siempre pienso en ti cuando ni se si piensas en mi, que celebra cada meta que cumples de lejos y en silencio, que te ama...que siempre te amo y que te amare de aqui hasta tu casita, que te amo por hoy, mañana y siempre. espero que te me cuides ship?, come bien, abrigate si te hace frio o llueve, no te me enfermes que sino con quien me voy a casar y recuerda que Te Amo, te amo, muack, te amo mucho mi vida, espero y pronto ya pueda volver a hablar contigo pero por mientras cuidate mi vida...te dejare en otro apartado algunos sueños que tuve y frases o algo asi, cuidate mi vida, muack, te amo.</p>
+        <p class="firma">Con todo mi amor,<br>kysi(tu futura esposa, sisisis :3)</p>
+        <a href="gift.html" class="boton">Notitas :3</a>
+        <a href="#" class="boton">Te amo siempre</a>
+    </div>
+</body>
+</html>
