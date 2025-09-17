@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Una cartita mas para mi amado...</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #e6d5f7, #f5e1e6);
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            overflow: auto;
+            padding: 20px;
+        }
+
+        .notas-container {
+            background: #fff;
+            width: 400px;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            position: relative;
+            text-align: center;
+            border: 3px solid #ffccd5;
+            border-image: linear-gradient(45deg, #ffccd5, #ff6f91) 1;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .notas-container::before, .notas-container::after,
+        .notas-container .decor1, .notas-container .decor2 {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="pink" stroke-width="2"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>') no-repeat center;
+            background-size: contain;
+        }
+
+        .notas-container::before {
+            top: 10px;
+            left: 10px;
+            transform: rotate(-25deg);
+        }
+
+        .notas-container::after {
+            bottom: 10px;
+            right: 10px;
+            transform: rotate(25deg);
+        }
+
+        .notas-container .decor1 {
+            top: 15px;
+            right: 15px;
+            transform: rotate(15deg);
+            opacity: 0.7;
+        }
+
+        .notas-container .decor2 {
+            bottom: 15px;
+            left: 15px;
+            transform: rotate(-15deg);
+            opacity: 0.7;
+        }
+
+        h1 {
+            color: #ff6f91;
+            font-size: 28px;
+            font-family: 'Georgia', serif;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .notas {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px dashed #ffccd5;
+        }
+
+        .notas ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+
+        .notas li {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .notas li::before {
+            content: '♥';
+            color: #ff6f91;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .adorno {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .adorno span {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: #ffccd5;
+            border-radius: 50%;
+            animation: float 4s infinite ease-in-out;
+        }
+
+        .adorno span:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; }
+        .adorno span:nth-child(2) { top: 20%; right: 10%; animation-delay: 0.5s; }
+        .adorno span:nth-child(3) { bottom: 15%; left: 15%; animation-delay: 1s; }
+        .adorno span:nth-child(4) { top: 30%; left: 25%; animation-delay: 1.5s; }
+        .adorno span:nth-child(5) { bottom: 25%; right: 20%; animation-delay: 2s; }
+        .adorno span:nth-child(6) { top: 50%; left: 10%; animation-delay: 2.5s; }
+        .adorno span:nth-child(7) { bottom: 10%; right: 5%; animation-delay: 3s; }
+        .adorno span:nth-child(8) { top: 40%; right: 15%; animation-delay: 3.5s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-25px) scale(1.2); }
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        .boton {
+            background: #ff6f91;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+
+        .boton:hover {
+            background: #ff4d73;
+        }
+    </style>
+</head>
+<body>
+    <div class="notas-container">
+        <div class="adorno">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="decor1"></div>
+        <div class="decor2"></div>
+        <h1>Notitas, sueños, frases, y etc, xd ;3</h1>
+        <div class="notas">
+            <ul>
+                <li>gracias por aparecer en mi vida, te amo mi niño, muack, abasho, te amo mucho mi vida :3</li>
+                <li>Una vez me soñe que estaba en un parque comiendo un heladito y pos de lejos caminaba alguien hacia mi, tenia unos globos y un peluche, estaba medio borroso, pero luego te vi, despues corri y te abraze, y despues lloraba de felicidad porque porfin te veia y te abrazaba y pos solo mi alarma y me desperte ;3</li>
+                <li>Si pudiera hablar sobre todo lo que siento por ti, no pararia de hablar porque eres el amor de mi vida, gracias por amarme mi niño, te amo.</li>
+                <li>Cuando estes triste recuerda que habian dias en los que te reias de mi porque...no pos no sabia aveces de el porque pero te reias porque aveces no entendia algunas cosas :,v</li>
+                <li>Adoro cómo me haces sentir tan especial, tan amada, te amo, muack.</li>
+                <li>Otro dia soñe que estabamos en una tipo llamada y pos jugabamos y hablabamos como antes y lit lo senti muy real porque cuando me levante pense que seguia en el sueño pero tristemente solo fue un sueño y se me quedo un vacio pensando en si estabas bien y asi ;3</li>
+                <li>gracias por aparecer en mi vida, eres y siempre seras mi primer, unico y ultimo amor verdadero unico y cincero, te amo mucho mi niño.</li>
+                <li>Eres mi aventura favorita en este mundo, muack, te amo mucho mi vida :3.</li>
+                <li>Tu amor es mi fuerza y mi inspiración para poder seguis adelante en este camino llamado vida, quiero amarte con todas mis fuerzas y hacerte el niño mas feliz del mundo, te amo.</li>
+                <li>Prometo amarte hoy y siempre.</li>
+                <li>ultimamente me he viciado a una tipo serie que se llama alien stage y mis favoritas hasta el momento son el round final y el round 6....we no, till no se merecia morir pipipi y ivan se sacrifico por till...pipipi ;3</li>
+                <li>todos los dias cuando hago cualquier cosa me acuerdo de ti, casi siempre me pregunto si desayunaste arepas con queso rallado como me decias, o que almerzas o cenas, te extraño y me haces mucha falta mi querido niño presioso :,(</li>
+                <li>mi sueño mas reciente fue que estabamos en la lluvia paseando como alguna vez dijimos...no podia ver tu cara pero eso no quitaba que me la estaba pasando muy bien a tu lado y despues nos comprabamos helado en pleno frio xd, y luego nos fuimos a sentar en un parque cercano, dejo de llover y salia el sol, los dos nos pusimos a simplemente hablar de cualquier cosa mientras reiamos y me senti muy feliz, al final te abrace y el sueño se termino porque me levantaron para ir a mi clase de informatica ;3</li>
+                <li>te amo mas de lo que puedas imaginar, te extraño mucho mi vida, espero y pronto volvamos a hablar como antes ;3</li>
+                <li>prometo jugar contigo 24/7 y jugar a lo que tu quieras mi vida, muack</li>
+                <li>prometo con todo mi corazon y alma no dejarte y amarte por SIEMPRE, te amo mucho mi vida</li>
+                <p>(update poorque esto ya lo llevo escribiendo dos semanas xd)</p>
+                <li>hace como unos dias intente de nuevo decirles a mis padres que si puedo tener mi cel de vuelta y me dijeron que no y despues me dijeron un monton de cosas feas y me senti mal denuevo haciendo que denuevo buelva a tener pensamientos horribles y decaiga en la trizteza otra vez ;3</li>
+                <li>no pos todas las noches siempre por alguna razon antes de cerrar los ojos digo "buenas noches yandy" inconcientemente porque creo que no hablar contigo me afecto ya que pos...ando sola siempre, hasta en el cole y en mi casa siempre mis padres me dicen cosas horribles</li>
+                <li>dato curioso xd: la pobre de mi prima creo que ya quedo traumada despues de tantos dias en los que me ve bien deprimida xd</li>
+                <li>espero que hayas comido bien y pos que estes feliz y que te haya hido bien en tu cole</li>
+                <li>todas la noches me pongo a mirar la luna y le pregunto si estaras alli...esperando y a cambio solo recibo silencio, lo unico que escojo es amarte, porque eres y seras siempre el amor de mi vida, te amo</li>
+                <li>como ya me vicien con alien stage te diria: te pienso tanto como luka piensa en hyuna, te amo tanto como mizi ama a sua y me sacrificaria por ti y estaria dispuesta a morir por ti como ivan se sacrifico por till, en fin, te amo </li>
+                <li>me haces tanta falta, haria lo que sea con tal ve abrazarte y estar almenos contigo un rato</li>
+                <li>te acuerdas de las canciones que te dedicaba? pos cada que mi playlist me reproduce esas canciones me pongo a chillar y a pensar si sigues alli ;3</li>
+                <li>busca la cancion "karma-alnst" te la dedico, esque...ya casi todo el tiempo escucho esa cancion y pos esa cancion casi siempre me recuerda a ti ;3</li>
+                <li>te amo mucho sabias? cada que me pongo a dibujar de alguna manera siempre apareces en mis dibujos y despues me empiezo a imaginar como seria o como es tu bella carita, en fin, te extraño mucho mi vida</li>
+                <li>sabias que cada que veo a ivan de alnst me recuerdo de ti? :3</li>
+                <li>ptm te extraño, no aguanto no poder hablar contigo o saber si estas bien</li>
+                <li>Recuerda que te amo, siempre lo hago, eres como esa estrella que me mantiene viva y me da una razon de vivir, gracias por amarme, te amo tanto que no sabria describirlo, te amo tanto que cada que me acuerdo de ti me pongo a chillar porque te extraño demasiado, esfuerzate porque ese futuro por el cual hablabamos no se construira solo, yo estare aqui siempre amandote shi?, te amo.</li>
+                <li>antes de conocerte siempre estaba sola, y pues casi siempre me ponia a ver el cielo y le preguntaba que porque me hacia esto, ademas de que, nunca senti que fuera importante para alguien...nunca lo he sido, siempre fui la segunda y ultima opcion, y solo me conformaba con eso porque me sentia sola y cuando prepare mi muerte, pues las veces que te decia que me tenia que morir pues era verdad, en el dia que te conoci...tenia que matarme unos tres dias despues pero sabes, me salvaste, me salvaste de aquel tormento que sentia dentro y por primera vez me senti importante para alguien y esa fue una de las cosas de las cuales me enamore de ti, no fue por lo que vi, sino por lo que senti, porque cada que me acuerdo de ti me siento amada, a tu lado me siento protegida y queria, y sabes nunca imagine que amara tanto, nunca imagine que este amor que siento existiera dentro mio, pero ahora ya lo se y estoy segura de algo; de que quiero vivir lo que me queda de vida a tu lado, quiero entregarte todo para hacerte feliz, porque este amor que siento por ti me consume lentamente y hace que cada dia te ame mas, cada que leo esas cartas que me mandaste lloro porque te amo, lloro porque es mi culpa, lloro porqe es mi culpa por hacernos esto, lo unico que puedo hacer ahora es amarte y esperar, esperar a que este amor no se acabe, nose si soy el amor de tu vida pero tu si eres el amor de mi vida, en fin, te amo y te amare por siempre.</li>
+                <li>no pos ayer mi prima me llevo a la fuerza a un parque porque casi caigo en la tentacion de agarrar un cutter pero pos por suerte mi prima me vio y tiro todo a la calle o nose donde lo puso pero me lo quito y me llevo a un parque, habian muchas personas, y bueno como sabes no me gusta estar en lugares con mucha gente pero me resigne, mi primita me dijo que me subiera a un tipo columpio para dos personas y esabamos alli pero despues mi prima llamo a una persona y nos empujaron y como nos empujaban tan alto casi me caigo y salgo volando pero me agarre fuerte y a cambio de no caer me choque fuerte en la cabeza con un fierro o algo asi del columpio y ahora pos me duele a cabeza, en fin espero estes bien.</li>
+                <p>otra update porque esta es la tercera semana en la que escribo esto ;3</p>
+                <li>Puede que pienses que me este olvidando de ti pero sabes...siempre pienso en ti, y te sigo amando como siempre y mas, te amo.</li>
+                <li>Quizas ya...te estes olvidando de mi, y sabes yo no, siempre todos los dias me acuerdo de ti, al despertar, al mirar al cielo o cuando voy a dormir e incluso en mis sueños, porque el amor que tengo aqui en el alma no se va y no se ira nunca porque quiero una vida contigo, y si el niño que tenga no tiene tu apellido le tendre que explicar el porque lleva tu nombre porque de verdad te amo mas que a nada, no se si sigues alli pero yo sigo aqui, mi corazon dice que aqui sigue pero mi alma solo espera para volver a tus hermosas palabras, los recuerdos que llevo son lo mas preciado que tengo y eres lo mas valioso que tengo, eres todo lo que quiero y amo. </li>
+                <li>soñe hace poco que estabamos en una llamada, yo caminaba hacia una casa mientras hablaba contigo por llamada claro y te dije que llegue y colgue, toque la puerta y me abrio una chica, le pregunte que si alli vivias tu, ella dijo que si y le dije que te llamara pero que no diga quien es, viniste y me miraste extrañado (no podia ver tu cara, chale) yo solo me rei un poco y me preguntaste que quien era y yo lo unico que hice fue llamar otra vez a tu cel y tu celular vibro, luego me llamaste por mi nombre en modo de pregunta y asenti con la cabeza...solo recuerdo que te pusiste feliz y que no sabias que hacer y al final solo nos abrazamos, por un momento senti que todo era real, al final solo te dije que te amo y desperte. Solo espero que sigas alli, porque sabes...estos sentimientos me inundan mas y mas, tanto que me enamoro y te extraño cada vez mas, en fin, te amo.</li> 
+                <li>Hoy es miercoles 17 osisi xd y me desespero cada vez mas para mandarte esto, nose si leas esto completo pero me matan las ganas de poder mandarte esto para que sepas que sigo aqui, al final pues ya nadie me habla ni en el cole ni se me acercan y con lo unico que me siento un poco feliz es escribiendo esto, pero bueno, espero estes bien o feliz, te amo.</li>
+                <li>Dataso: cada que escucho -amor completo/mon lafete- me pongo a llorar a mares.</li>
+                <li>Enserio que te extraño mucho, espero pronto ya podamos estar como antes, ya que, te amo, muack, beshos a mi niño hermoso</li>
+                <li>Gracias por haber aparecido en mi vida, eres lo mejor qu me haya pasado, sin ti no sabria vivir, eres todo y lo unico que quiero en esta vida, muack, te amo.</li>
+                <li>*le da flores amarillas epikamente* sabias que te amo mucho mi vida?, te amo mucho mi vida, muack, te amo.</li>
+                <li>aun no me vi la pelicula que salio de kimetsu no yaiba pero...Yo si renunciaria al cielo para tener la oportunidad de estar contigo en el infierno *muack*, te eligiria a ti en esta en todos los universos porque te amo.</li>
+                <li>mi niño...me prometes que cuando podamos hablar juguemos a cualquier juego que tu quieras o almenos tener esos debates en los cuales siemre ganabas y nos reiamos o contabamos cuaquier cosa? esque ya te extraño mucho ;3</li>
+                <li>Muack, te amo mucho mi niño, para mi siempre vas a ser mi niño hermoso, no importa si tienes a alguien mas, la enveneno y despues te quedas conmiko porque si no es conmiko no es con nadie :3 (ok no, si estubieras con alguien mas me voy a poner triste y me voy a tirar de un edificio porque mi vida no es vida si no estas conmiko, porque tu le das sentido y color a mi vida ;3)</li>
+                <li>-- . / ... ..- -- . .-. .--- --- / . -. / .-.. .- / - .-. .. ... - . --.. .- / .--. --- .-. --.- ..- . / - --- -.. --- / . ... / -.-. ..- .-.. .--. .- / -- .- --..-- / -- .. / -.-. --- .-. .- --.. -. / -- . / -.. .. -.-. . / --.- ..- . / ... .. --. --- / .- --.- ..- / -.-- / --.- ..- . / -. --- / -- . / --- .-.. ...- .. -.. . ... --..-- / .--. . .-. --- / -.-- --- / -.-. .- .-.. .-.. --- / -.-- / -. --- / -.. .. --. --- / -. .- -.. .- --..-- / - ..- / . .-. . ... / .-.. .- / ..- -. .. -.-. .- / .-.. ..- --.. / --.- ..- . / -- . / .. .-.. ..- -- .. -. .- / -.-. ..- .- -. -.. --- / - --- -.. --- ... / -- .. ... / -.. .. .- ... / ... --- -. / -... .- ... ..- .-. .- --..-- / - . -. --. --- / --.- ..- . / .- --. ..- .- -. - .- .-. / -.-. --- -- --- / -.-. .- -.. .- / -.. .. .- / -- .. ... / .--. .- -.. .-. . ... / -- . / -.. .. -.-. . -. / --.- ..- . / -. --- / ... .. .-. ...- --- / .--. .- .-. .- / -. .- -.. .- --..-- / .-.. --- / ..- -. .. -.-. --- / --.- ..- . / .... .- --. --- / .- .-.. / ..-. .. -. .- .-.. / . ... / .- ..-. . .-. .-. .- .-. -- . / .- / -- .. / .- -- --- .-. / .--. --- .-. / - .. --..-- / -.-. .- -.. .- / -.. .- / -- . / -.. . ... . ... .--. . .-. --- / -- .- ... --..-- / .--. --- .-. --.- ..- . / -. --- / ... . / ... .. / -.-- .- / -- . / .... .- ... / --- .-.. ...- .. -.. .- -.. --- --..-- / -.-- / ... .. . -. - --- / --.- ..- . / . ... - --- -.-- / .- .-.. / -... --- .-. -.. . / -.. . .-.. / -.-. --- .-.. .- .--. ... --- --..-- / .- -.-- ..- -.. .- .-.-.- .-.-.- .-.-.- .-.-.</li>
+            </ul>
+        </div>
+        <a href="formxd.html" class="boton">Volver a la Carta</a>
+    </div>
+</body>
+</html>
